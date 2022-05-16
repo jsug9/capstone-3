@@ -11,7 +11,7 @@ const fetchCountries = async () => {
 const fetchRegions = async (country) => {
   const result = await fetch(`${baseUrl}/${formattedDate}/country/${country}`);
   const data = await result.json();
-  return data;
+  return { countryData: data.dates[formattedDate].countries };
 };
 
 export { fetchCountries, fetchRegions };
