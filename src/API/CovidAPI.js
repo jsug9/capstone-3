@@ -8,8 +8,8 @@ const fetchCountries = async () => {
   return data;
 };
 
-const fetchRegions = async (region) => {
-  const result = await fetch(`${baseUrl}/${formattedDate}/country/${region}`);
+const fetchRegions = async (country) => {
+  const result = await fetch(`${baseUrl}/${formattedDate}/country/${country}`);
   const data = await result.json();
   return data;
 };
