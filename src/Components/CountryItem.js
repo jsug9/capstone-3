@@ -5,7 +5,10 @@ const CountryItem = (props) => {
   const { country } = props;
 
   return (
-    <p>{country.name}</p>
+    <div className="countryItem">
+      <p>{country.name}</p>
+      <p>{country.cases}</p>
+    </div>
   );
 };
 
@@ -13,6 +16,7 @@ CountryItem.propTypes = {
   country: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
+    cases: PropTypes.number,
   }).isRequired,
 };
 

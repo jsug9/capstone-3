@@ -5,14 +5,17 @@ const CountriesList = () => {
     {
       id: '1',
       name: 'Peru',
+      cases: 1000,
     },
     {
       id: '2',
       name: 'Italy',
+      cases: 1300,
     },
     {
       id: '3',
       name: 'Spain',
+      cases: 1200,
     },
   ];
 
