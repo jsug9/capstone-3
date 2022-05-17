@@ -2,10 +2,12 @@ import { combineReducers, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import covidReducer from './covid/covid';
+import countriesReducer from './countries/CountriesReducer';
+import regionsReducer from './regions/RegionsReducer';
 
 const rootReducer = combineReducers({
-  covid: covidReducer,
+  countries: countriesReducer,
+  regions: regionsReducer,
 });
 
 const middleware = applyMiddleware(thunk, logger);
