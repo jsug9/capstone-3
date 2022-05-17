@@ -1,11 +1,13 @@
+import { Icon } from '@iconify/react';
 import CountriesList from '../Components/CountriesList';
 
 const CountriesCountainer = () => (
   <div>
     <div className="summary">
+      <Icon icon="carbon:location-filled" width="70" height="70" className="allCountriesMap" />
       <div className="summary-left">
-        <p>All Cases</p>
-        <p>10000</p>
+        <p className="allCountries allCountriesSize">All Countries</p>
+        <p className="allCountriesSize">10000 cases</p>
       </div>
     </div>
     <div className="searchDiv">
