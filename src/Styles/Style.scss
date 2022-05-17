@@ -32,6 +32,7 @@ body {
   text-align: center;
 }
 
+// Navbar
 nav {
   background-color: $main;
   display: flex;
@@ -47,6 +48,33 @@ nav {
   gap: 0.5rem;
 }
 
+// COUNTRIES PAGE
+
+// Countries List
+.countriesList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Country Item
+.countryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 9rem;
+  background: $main;
+  color: white;
+  width: 50%;
+}
+
+.countryItem:nth-child(4n + 2),
+.countryItem:nth-child(4n + 3) {
+  background: $mainDarker;
+}
+
+// MEDIA QUERIES
 @media (max-width: 768px) {
   nav {
     padding: $phonePadding;
