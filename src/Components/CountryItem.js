@@ -20,9 +20,9 @@ CountryItem.propTypes = {
   country: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
-    today_confirmed: PropTypes.number,
-    today_deaths: PropTypes.number,
-    today_recovered: PropTypes.number,
+    today_confirmed: PropTypes.string,
+    today_deaths: PropTypes.string,
+    today_recovered: PropTypes.string,
     source: PropTypes.string,
     today_open_cases: PropTypes.number,
   }).isRequired,

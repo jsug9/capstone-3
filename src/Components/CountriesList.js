@@ -1,24 +1,28 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { getCountries } from '../Redux/countries/CountriesReducer';
-// import { formattedDate } from '../Logic/DateFormatter';
+import PropTypes from 'prop-types';
 import CountryItem from './CountryItem';
 
-const CountriesList = () => {
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.countries);
-
-  useEffect(() => {
-    dispatch(getCountries());
-  }, []);
+const CountriesList = (props) => {
+  const { countries } = props;
 
   return (
     <div className="countriesList">
-      {data.map((item) => (
+      {countries.map((item) => (
         <CountryItem key={item.id} country={item} />
       ))}
     </div>
   );
+};
+
+CountriesList.propTypes = {
+  countries: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    today_confirmed: PropTypes.string,
+    today_deaths: PropTypes.string,
+    today_recovered: PropTypes.string,
+    source: PropTypes.string,
+    today_open_cases: PropTypes.number,
+  })).isRequired,
 };
 
 export default CountriesList;
