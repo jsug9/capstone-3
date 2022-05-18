@@ -13,11 +13,21 @@ const CountriesList = () => {
   }, []);
 
   const countriesList = data.dates[formattedDate].countries;
-  console.log(countriesList);
+  const mappedList = Object.keys(countriesList).map((key) => ({
+    id: key,
+    name: countriesList[key].name,
+    today_confirmed: countriesList[key].today_confirmed,
+    today_deaths: countriesList[key].today_deaths,
+    today_recovered: countriesList[key].today_recovered,
+    source: countriesList[key].source,
+    today_open_cases: countriesList[key].today_open_cases,
+  }));
+
+  console.log(mappedList);
 
   return (
     <div className="countriesList">
-      {data.map((country) => (
+      {mappedList.map((country) => (
         <p key={country.name}>{country.name}</p>
       ))}
     </div>
