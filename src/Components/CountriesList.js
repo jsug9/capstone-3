@@ -23,12 +23,9 @@ const CountriesList = () => {
     today_open_cases: countriesList[key].today_open_cases,
   }));
 
-  console.log(mappedList);
-
   return (
     <div className="countriesList">
       {mappedList.map((item) => (
-        // <p key={item.id}>{item.name}</p>
         <CountryItem key={item.id} country={item} />
       ))}
     </div>
