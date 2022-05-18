@@ -26,18 +26,24 @@ body {
   font-family: $gillSans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: $main;
 }
 
 .App {
   text-align: center;
 }
 
+// Navbar
 nav {
   background-color: $main;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
+}
+
+.navbarHover:hover {
+  color: $mainDarker;
 }
 
 .left-nav {
@@ -47,14 +53,120 @@ nav {
   gap: 0.5rem;
 }
 
+// COUNTRIES PAGE
+
+// Sumary
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 9rem;
+  background: $mainDarker;
+  color: white;
+}
+
+.summary-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.allCountries {
+  margin-bottom: -1rem;
+}
+
+.allCountriesMap {
+  color: $main;
+}
+
+.allCountriesSize {
+  font-size: 20px;
+}
+
+// Search Div
+.searchDiv {
+  display: flex;
+  background: $main;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+// Countries List
+.countriesList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Country Item
+.countryItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 9rem;
+  background: $main;
+  color: white;
+  width: 50%;
+}
+
+.mapIcon {
+  color: $mainDarker;
+  align-self: center;
+}
+
+.countryName {
+  margin-bottom: -1rem;
+}
+
+.countryInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 1rem;
+}
+
+.countryItem:nth-child(4n + 2),
+.countryItem:nth-child(4n + 3) {
+  background: $mainDarker;
+
+  .mapIcon {
+    color: $main;
+  }
+}
+
+// MEDIA QUERIES
 @media (max-width: 768px) {
   nav {
+    padding: $phonePadding;
+  }
+
+  .searchDiv {
+    padding: $phonePadding;
+  }
+
+  .summary {
     padding: $phonePadding;
   }
 }
 
 @media (min-width: 768px) {
   nav {
+    padding: $desktopPadding;
+  }
+
+  .searchDiv {
+    padding: $desktopPadding;
+  }
+
+  .summary {
     padding: $desktopPadding;
   }
 }
