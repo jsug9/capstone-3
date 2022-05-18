@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getCountries } from '../Redux/countries/CountriesReducer';
 import { formattedDate } from '../Logic/DateFormatter';
-// import CountryItem from './CountryItem';
+import CountryItem from './CountryItem';
 
 const CountriesList = () => {
   const dispatch = useDispatch();
@@ -27,8 +27,9 @@ const CountriesList = () => {
 
   return (
     <div className="countriesList">
-      {mappedList.map((country) => (
-        <p key={country.name}>{country.name}</p>
+      {mappedList.map((item) => (
+        // <p key={item.id}>{item.name}</p>
+        <CountryItem key={item.id} country={item} />
       ))}
     </div>
   );
