@@ -1,9 +1,18 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import CountriesList from '../Components/CountriesList';
+import { getCountries } from '../Redux/countries/CountriesReducer';
 
 const CountriesCountainer = () => {
-  const countries = useSelector((state) => state.countries);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.countries);
+  useEffect(() => {
+    dispatch(getCountries());
+  }, []);
+
+  const countries = [...state];
+  const total = countries.shift();
 
   return (
     <div>
@@ -12,7 +21,9 @@ const CountriesCountainer = () => {
         <div className="summary-left">
           <p className="allCountries allCountriesSize">All Countries</p>
           <p className="allCountriesSize">
-            <span>100000</span>
+            <span>
+              {total?.today_confirmed}
+            </span>
             {' '}
             cases
           </p>
