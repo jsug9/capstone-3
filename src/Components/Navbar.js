@@ -4,8 +4,11 @@ import { Icon } from '@iconify/react';
 
 const Navbar = () => (
   <nav>
-    <NavLink to="/">
-      <Icon icon="eva:arrow-ios-back-fill" width="30" height="30" className="backArrow navbarHover" />
+    <NavLink
+      to="/"
+      className={(navData) => (navData.isActive ? 'backArrowDisabled' : 'backArrow navbarHover')}
+    >
+      <Icon icon="eva:arrow-ios-back-fill" width="30" height="30" />
     </NavLink>
     <h1>Covid Tracker</h1>
     <div className="left-nav">

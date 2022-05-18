@@ -46,6 +46,10 @@ nav {
   color: white;
 }
 
+.backArrowDisabled {
+  color: $mainDarker;
+}
+
 .navbarHover:hover {
   color: $mainDarker;
 }
