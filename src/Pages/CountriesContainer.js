@@ -12,7 +12,7 @@ const CountriesCountainer = () => (
     </div>
     <div className="searchDiv">
       <h1>Stats by Country</h1>
-      <input type="text" placeholder="Search Country" />
+      <input type="text" placeholder="Search Country" className="countryInput" />
     </div>
     <CountriesList />
   </div>

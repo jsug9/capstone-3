@@ -1,43 +1,24 @@
-import CountryItem from './CountryItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getCountries } from '../Redux/countries/CountriesReducer';
+import { formattedDate } from '../Logic/DateFormatter';
+// import CountryItem from './CountryItem';
 
 const CountriesList = () => {
-  const countries = [
-    {
-      id: '1',
-      name: 'Peru',
-      cases: 1000,
-    },
-    {
-      id: '2',
-      name: 'Italy',
-      cases: 1300,
-    },
-    {
-      id: '3',
-      name: 'Spain',
-      cases: 1200,
-    },
-    {
-      id: '4',
-      name: 'Argentina',
-      cases: 1200,
-    },
-    {
-      id: '5',
-      name: 'France',
-      cases: 1200,
-    },
-    {
-      id: '6',
-      name: 'China',
-      cases: 1200,
-    },
-  ];
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.countries);
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, []);
+
+  const countriesList = data.dates[formattedDate].countries;
+  console.log(countriesList);
 
   return (
     <div className="countriesList">
-      {countries.map((country) => (
-        <CountryItem key={country.id} country={country} />
+      {data.map((country) => (
+        <p key={country.name}>{country.name}</p>
       ))}
     </div>
   );

@@ -10,7 +10,7 @@ const CountryItem = (props) => {
       <Icon icon="carbon:location-filled" width="50" height="50" className="mapIcon" />
       <div className="countryInformation">
         <p className="countryName">{country.name}</p>
-        <p>{country.cases}</p>
+        <p>{country.today_confirmed}</p>
       </div>
     </div>
   );
@@ -20,7 +20,7 @@ CountryItem.propTypes = {
   country: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
-    cases: PropTypes.number,
+    today_confirmed: PropTypes.string,
   }).isRequired,
 };
 
