@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '@iconify/react';
+import renderImage from '../Logic/ImageRenderer';
 
 const CountryItem = (props) => {
   const { country } = props;
 
   return (
     <div className="countryItem">
-      <Icon icon="carbon:location-filled" width="50" height="50" className="mapIcon" />
+      {renderImage(country, 'country')}
       <div className="countryInformation">
         <p className="countryName">{country.name}</p>
-        <p>{country.today_confirmed}</p>
+        <p>
+          <span>
+            {country.today_confirmed}
+          </span>
+          {' '}
+          cases
+        </p>
       </div>
     </div>
   );
@@ -20,6 +26,7 @@ CountryItem.propTypes = {
   country: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
+    image: PropTypes.string,
     today_confirmed: PropTypes.string,
     today_deaths: PropTypes.string,
     today_recovered: PropTypes.string,

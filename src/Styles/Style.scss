@@ -83,6 +83,11 @@ nav {
   color: $main;
 }
 
+.worldImage {
+  opacity: 0.5;
+  height: 90%;
+}
+
 .allCountriesSize {
   font-size: 20px;
 }
@@ -119,8 +124,9 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  height: 9rem;
+  justify-content: space-between;
+  height: 12rem;
+  padding-top: 1rem;
   background: $main;
   color: white;
   width: 50%;
@@ -129,6 +135,13 @@ h1 {
 .mapIcon {
   color: $mainDarker;
   align-self: center;
+}
+
+.countryImage {
+  width: 50%;
+  height: 50%;
+  align-self: center;
+  opacity: 0.5;
 }
 
 .countryName {

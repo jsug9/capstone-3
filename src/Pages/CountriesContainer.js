@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import { Icon } from '@iconify/react';
 import CountriesList from '../Components/CountriesList';
 import { getCountries } from '../Redux/countries/CountriesReducer';
+import renderImage from '../Logic/ImageRenderer';
 
 const CountriesCountainer = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const CountriesCountainer = () => {
   return (
     <div>
       <div className="summary">
-        <Icon icon="carbon:location-filled" width="70" height="70" className="allCountriesMap" />
+        {renderImage(total, 'world')}
         <div className="summary-left">
           <p className="allCountries allCountriesSize">All Countries</p>
           <p className="allCountriesSize">
