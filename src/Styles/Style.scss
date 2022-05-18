@@ -177,7 +177,9 @@ h1 {
   }
 
   .summary {
-    padding: $phonePadding;
+    padding: 1rem 0;
+    flex-direction: column;
+    height: 18rem;
   }
 
   .countryInformation {
