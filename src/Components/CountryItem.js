@@ -24,7 +24,7 @@ CountryItem.propTypes = {
     today_deaths: PropTypes.number,
     today_recovered: PropTypes.number,
     source: PropTypes.string,
-    today_open_cases: PropTypes.string,
+    today_open_cases: PropTypes.number,
   }).isRequired,
 };
 

@@ -4,7 +4,7 @@ import CountriesList from '../Components/CountriesList';
 const CountriesCountainer = () => (
   <div>
     <div className="summary">
-      <Icon icon="carbon:location-filled" width="70" height="7 0" className="allCountriesMap" />
+      <Icon icon="carbon:location-filled" width="70" height="70" className="allCountriesMap" />
       <div className="summary-left">
         <p className="allCountries allCountriesSize">All Countries</p>
         <p className="allCountriesSize">10000 cases</p>
