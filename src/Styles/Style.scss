@@ -119,7 +119,7 @@ h1 {
 .mapIcon {
   color: $mainDarker;
   align-self: center;
- }
+}
 
 .countryName {
   margin-bottom: -1rem;
@@ -136,9 +136,10 @@ h1 {
 .countryItem:nth-child(4n + 2),
 .countryItem:nth-child(4n + 3) {
   background: $mainDarker;
+
   .mapIcon {
     color: $main;
-   }
+  }
 }
 
 // MEDIA QUERIES
