@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CountriesList from '../Components/CountriesList';
 import { getCountries } from '../Redux/countries/CountriesReducer';
 import TotalCases from '../Components/TotalCases';
+import SearchCountry from '../Components/SearchCountry';
 
 const CountriesCountainer = () => {
   const dispatch = useDispatch();
@@ -11,17 +12,20 @@ const CountriesCountainer = () => {
     dispatch(getCountries());
   }, []);
 
+  const [searchCountry, setSearchCountry] = useState('');
+
+  const updateSearchCountry = (e) => {
+    setSearchCountry(e.target.value);
+  };
+
   const countries = [...state];
   const total = countries.shift();
 
   return (
     <div>
       <TotalCases country={total} />
-      <div className="searchDiv">
-        <h1>Stats by Country</h1>
-        <input type="text" placeholder="Search Country" className="countryInput" />
-      </div>
-      <CountriesList countries={countries} />
+      <SearchCountry searchCountry={searchCountry} updateSearchCountry={updateSearchCountry} />
+      <CountriesList countries={countries} searchCountry={searchCountry} />
     </div>
   );
 };
