@@ -37,5 +37,5 @@ const regionsReducer = (state = initialState, action) => {
   }
 };
 
-export { getRegions };
+export { getRegions, GET_REGIONS };
 export default regionsReducer;
