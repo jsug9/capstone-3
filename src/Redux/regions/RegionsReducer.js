@@ -14,6 +14,7 @@ const getRegions = (country) => async (dispatch) => {
     id: regions.id,
     name: regions.name,
     image: getMapUrl(regions.id),
+    regions: regions.regions,
     today_confirmed: regions.today_confirmed.toLocaleString(),
     today_deaths: regions.today_deaths.toLocaleString(),
     today_recovered: regions.today_recovered.toLocaleString(),

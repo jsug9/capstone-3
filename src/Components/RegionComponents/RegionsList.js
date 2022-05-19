@@ -13,16 +13,25 @@ const RegionsList = (props) => {
   useEffect(() => {
     const cleanSearchTerm = searchRegion.toLowerCase().trim();
     setVisibleRegions(regions.filter((region) => {
-      const regionName = region.name.toLowerCase();
+      const regionName = region?.name.toLowerCase();
       return regionName.includes(cleanSearchTerm);
     }));
   }, [searchRegion]);
 
+  const renderRegions = () => {
+    if (visibleRegions !== undefined && visibleRegions.length !== 0) {
+      return (
+        visibleRegions?.map((item) => (
+          <RegionItem key={item.name} region={item} />
+        ))
+      );
+    }
+    return (<p>No Regions Available</p>);
+  };
+
   return (
     <div className="regionsList">
-      {visibleRegions?.map((item) => (
-        <RegionItem key={item.id} country={item} />
-      ))}
+      {renderRegions()}
     </div>
   );
 };
@@ -31,9 +40,9 @@ RegionsList.propTypes = {
   regions: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
-    today_confirmed: PropTypes.string,
-    today_deaths: PropTypes.string,
-    today_recovered: PropTypes.string,
+    today_confirmed: PropTypes.number,
+    today_deaths: PropTypes.number,
+    today_recovered: PropTypes.number,
     source: PropTypes.string,
     today_open_cases: PropTypes.number,
   })).isRequired,

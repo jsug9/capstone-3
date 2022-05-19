@@ -11,8 +11,6 @@ const RegionContainer = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.regions);
 
-  const { regions } = state;
-
   useEffect(() => {
     dispatch(getRegions(country));
   }, []);
@@ -30,11 +28,18 @@ const RegionContainer = () => {
     return (<p>loading</p>);
   };
 
+  const renderRegions = () => {
+    if (state.regions !== undefined && state.length !== 0) {
+      return (<RegionsList regions={state.regions} searchRegion={searchRegion} />);
+    }
+    return (<p>loading</p>);
+  };
+
   return (
     <div className="regionsContainer">
       {renderHeader()}
       <SearchItem item="Region" searchItem={searchRegion} updateSearchItem={updateSearcRegion} />
-      <RegionsList regions={regions} searchRegion={searchRegion} />
+      {renderRegions()}
     </div>
   );
 };
