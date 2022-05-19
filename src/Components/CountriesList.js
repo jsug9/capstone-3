@@ -7,6 +7,10 @@ const CountriesList = (props) => {
   const [visibleCountries, setVisibleCountries] = useState(countries);
 
   useEffect(() => {
+    setVisibleCountries(countries);
+  }, [countries]);
+
+  useEffect(() => {
     const cleanSearchTerm = searchCountry.toLowerCase().trim();
     setVisibleCountries(countries.filter((country) => {
       const countryName = country.name.toLowerCase();
