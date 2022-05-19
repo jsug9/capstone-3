@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:thin,extra-light,light,100,200,300,400,500,600,700,800');
+
+// Fonts
+$lato: 'Lato', sans-serif;
+$gillSans: 'Gill Sans', sans-serif;
+
+// Colors
+$main: #ec5f94;
+$mainDarker: #a24167;
+$searchDiv: #cc5283;
+
+// Padding
+$desktopPadding: 0 3rem;
+$phonePadding: 0 1rem;
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $gillSans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: $main;
+}
+
+.App {
+  text-align: center;
+}
+
+// Navbar
+nav {
+  background-color: $main;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.backArrow {
+  color: white;
+}
+
+.backArrowDisabled {
+  color: $mainDarker;
+}
+
+.navbarHover:hover {
+  color: $mainDarker;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+// COUNTRIES PAGE
+// Sumary
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+  background: $mainDarker;
+  color: white;
+}
+
+.summary-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.allCountries {
+  margin-bottom: -1rem;
+}
+
+.allCountriesMap {
+  color: $main;
+}
+
+.worldImage {
+  opacity: 0.5;
+  height: 75%;
+}
+
+.allCountriesSize {
+  font-size: 20px;
+}
+
+// Search Div
+.searchDiv {
+  display: flex;
+  background: $searchDiv;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.countryInput {
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  border: none;
+}
+
+// Countries List
+.countriesList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// Country Item
+.countryItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 12rem;
+  padding-top: 1rem;
+  background: $main;
+  color: white;
+  width: 50%;
+  text-decoration: none;
+}
+
+.mapIcon {
+  color: $mainDarker;
+  align-self: center;
+}
+
+.countryImage {
+  width: 50%;
+  height: 50%;
+  align-self: center;
+  opacity: 0.5;
+}
+
+.countryName {
+  margin-bottom: -1rem;
+}
+
+.countryInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.countryItem:nth-child(4n + 2),
+.countryItem:nth-child(4n + 3) {
+  background: $mainDarker;
+
+  .mapIcon {
+    color: $main;
+  }
+}
+
+// REGIONS PAGE
+.noRegions {
+  padding: 2rem;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.regionItem {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.regionItem:nth-child(even) {
+  background: $mainDarker;
+}
+
+.regionInformation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// MEDIA QUERIES
+@media (max-width: 768px) {
+  nav {
+    padding: $phonePadding;
+  }
+
+  .searchDiv {
+    padding: $phonePadding;
+  }
+
+  .summary {
+    padding: 1rem 0;
+    flex-direction: column;
+    height: 18rem;
+  }
+
+  .allCountriesMap {
+    margin-top: 4rem;
+  }
+
+  .countryInformation {
+    padding: $phonePadding;
+  }
+
+  .countryItem {
+    flex-direction: column;
+  }
+
+  .regionItem {
+    padding: $phonePadding;
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    padding: $desktopPadding;
+  }
+
+  .searchDiv {
+    padding: $desktopPadding;
+  }
+
+  .summary {
+    padding: $desktopPadding;
+  }
+
+  .countryItem {
+    flex-direction: row;
+    padding: $desktopPadding;
+    align-items: center;
+  }
+
+  .regionItem {
+    padding: $desktopPadding;
+  }
+}
