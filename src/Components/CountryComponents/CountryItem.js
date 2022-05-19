@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import renderImage from '../Logic/ImageRenderer';
+import renderImage from '../ImageRenderer';
 
 const CountryItem = (props) => {
   const { country } = props;
 
   return (
     <NavLink
-      to={`/countries/${country.id}`}
+      to={`/${country.id}`}
       className="countryItem"
     >
       {renderImage(country, 'country')}

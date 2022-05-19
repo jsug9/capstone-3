@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import MapImage from '../Components/MapImage';
+import MapImage from './MapImage';
 
 const renderImage = (country, kind) => {
   let alt = '';
@@ -7,11 +7,11 @@ const renderImage = (country, kind) => {
   let iconClassName = '';
   let size = '';
 
-  if (kind === 'world') {
+  if (kind === 'top') {
     alt = 'World Image';
     imageClassName = 'worldImage';
     iconClassName = 'allCountriesMap';
-    size = '70';
+    size = '80';
   } else {
     alt = 'Country Image';
     imageClassName = 'countryImage';

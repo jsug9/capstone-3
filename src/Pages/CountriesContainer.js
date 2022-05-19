@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import CountriesList from '../Components/CountriesList';
 import { getCountries } from '../Redux/countries/CountriesReducer';
+import CountriesList from '../Components/CountryComponents/CountriesList';
 import TotalCases from '../Components/TotalCases';
-import SearchCountry from '../Components/SearchCountry';
+import SearchCountry from '../Components/CountryComponents/SearchCountry';
 
 const CountriesCountainer = () => {
   const dispatch = useDispatch();

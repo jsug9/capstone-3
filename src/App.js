@@ -14,7 +14,7 @@ const App = () => (
     </header>
     <Routes>
       <Route path="/" element={<CountriesCountainer />} />
-      <Route path="/countries/:countryName" element={<Region />} />
+      <Route path="/:country" element={<Region />} />
     </Routes>
   </Router>
 );

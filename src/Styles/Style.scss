@@ -7,6 +7,7 @@ $gillSans: 'Gill Sans', sans-serif;
 // Colors
 $main: #ec5f94;
 $mainDarker: #a24167;
+$searchDiv: #cc5283;
 
 // Padding
 $desktopPadding: 0 3rem;
@@ -99,7 +100,7 @@ nav {
 // Search Div
 .searchDiv {
   display: flex;
-  background: $main;
+  background: $searchDiv;
   color: white;
   align-items: center;
   justify-content: space-between;

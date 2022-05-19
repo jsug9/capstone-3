@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import renderImage from '../Logic/ImageRenderer';
+import renderImage from './ImageRenderer';
 
 const TotalCases = (props) => {
   const { country } = props;
 
   return (
     <div className="summary">
-      {renderImage(country, 'world')}
+      {renderImage(country, 'top')}
       <div className="summary-left">
         <p className="allCountries allCountriesSize">All Countries</p>
         <p className="allCountriesSize">
