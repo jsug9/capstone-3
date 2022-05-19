@@ -5,14 +5,16 @@ import { getMapUrl } from '../../API/MapsAPI';
 const GET_COUNTRIES = 'Capstone-3/countries/GET_COUNTRIES';
 
 const initialState = [];
+let isLoading = false;
 
 const getCountries = () => async (dispatch) => {
+  if (isLoading) return;
   const data = await fetchCountries();
   const countriesList = data.dates[formattedDate].countries;
   const allCountries = data.total;
   const mappedAllCountries = {
     id: allCountries.name,
-    name: allCountries.name,
+    name: 'All Countries',
     image: getMapUrl('world'),
     today_confirmed: allCountries.today_confirmed.toLocaleString(),
     today_deaths: allCountries.today_deaths.toLocaleString(),
@@ -35,6 +37,7 @@ const getCountries = () => async (dispatch) => {
     type: GET_COUNTRIES,
     payload: mappedList,
   });
+  isLoading = true;
 };
 
 const countriesReducer = (state = initialState, action) => {

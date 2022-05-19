@@ -21,7 +21,12 @@ const renderImage = (country, kind) => {
 
   if (country?.image) {
     return (
-      <MapImage src={country.image} alt={alt} className={imageClassName} />
+      <MapImage
+        src={country.image}
+        alt={alt}
+        imageClassName={imageClassName}
+        iconClassName={iconClassName}
+      />
     );
   }
   return <Icon icon="carbon:location-filled" width={size} height={size} className={iconClassName} />;

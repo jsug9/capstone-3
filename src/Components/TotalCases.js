@@ -8,7 +8,7 @@ const TotalCases = (props) => {
     <div className="summary">
       {renderImage(country, 'top')}
       <div className="summary-left">
-        <p className="allCountries allCountriesSize">All Countries</p>
+        <p className="allCountries allCountriesSize">{country?.name}</p>
         <p className="allCountriesSize">
           <span>
             {country?.today_confirmed}
