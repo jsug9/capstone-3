@@ -6,7 +6,8 @@ const MapImage = (props) => {
   const {
     src,
     alt,
-    className,
+    imageClassName,
+    iconClassName,
   } = props;
 
   const [error, setError] = useState(false);
@@ -15,15 +16,16 @@ const MapImage = (props) => {
   };
 
   if (error) {
-    return <Icon icon="carbon:location-filled" width="80" height="80" className="mapIcon" />;
+    return <Icon icon="carbon:location-filled" width="80" height="80" className={iconClassName} />;
   }
-  return <img src={src} className={className} alt={alt} onError={onError} />;
+  return <img src={src} className={imageClassName} alt={alt} onError={onError} />;
 };
 
 MapImage.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  imageClassName: PropTypes.string.isRequired,
+  iconClassName: PropTypes.string.isRequired,
 };
 
 export default MapImage;

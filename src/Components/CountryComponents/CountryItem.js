@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import renderImage from '../Logic/ImageRenderer';
+import { NavLink } from 'react-router-dom';
+import renderImage from '../ImageRenderer';
 
 const CountryItem = (props) => {
   const { country } = props;
 
   return (
-    <div className="countryItem">
+    <NavLink
+      to={`/${country.id}`}
+      className="countryItem"
+    >
       {renderImage(country, 'country')}
       <div className="countryInformation">
         <p className="countryName">{country.name}</p>
@@ -18,7 +22,7 @@ const CountryItem = (props) => {
           cases
         </p>
       </div>
-    </div>
+    </NavLink>
   );
 };
 
@@ -28,10 +32,6 @@ CountryItem.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     today_confirmed: PropTypes.string,
-    today_deaths: PropTypes.string,
-    today_recovered: PropTypes.string,
-    source: PropTypes.string,
-    today_open_cases: PropTypes.number,
   }).isRequired,
 };
 

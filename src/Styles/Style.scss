@@ -7,6 +7,7 @@ $gillSans: 'Gill Sans', sans-serif;
 // Colors
 $main: #ec5f94;
 $mainDarker: #a24167;
+$searchDiv: #cc5283;
 
 // Padding
 $desktopPadding: 0 3rem;
@@ -62,7 +63,6 @@ nav {
 }
 
 // COUNTRIES PAGE
-
 // Sumary
 .summary {
   display: flex;
@@ -99,7 +99,7 @@ nav {
 // Search Div
 .searchDiv {
   display: flex;
-  background: $main;
+  background: $searchDiv;
   color: white;
   align-items: center;
   justify-content: space-between;
@@ -133,6 +133,7 @@ h1 {
   background: $main;
   color: white;
   width: 50%;
+  text-decoration: none;
 }
 
 .mapIcon {
@@ -166,6 +167,31 @@ h1 {
   }
 }
 
+// REGIONS PAGE
+.noRegions {
+  padding: 2rem;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.regionItem {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.regionItem:nth-child(even) {
+  background: $mainDarker;
+}
+
+.regionInformation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 // MEDIA QUERIES
 @media (max-width: 768px) {
   nav {
@@ -182,12 +208,20 @@ h1 {
     height: 18rem;
   }
 
+  .allCountriesMap {
+    margin-top: 4rem;
+  }
+
   .countryInformation {
     padding: $phonePadding;
   }
 
   .countryItem {
     flex-direction: column;
+  }
+
+  .regionItem {
+    padding: $phonePadding;
   }
 }
 
@@ -208,5 +242,9 @@ h1 {
     flex-direction: row;
     padding: $desktopPadding;
     align-items: center;
+  }
+
+  .regionItem {
+    padding: $desktopPadding;
   }
 }

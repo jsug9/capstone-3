@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import MapImage from '../Components/MapImage';
+import MapImage from './MapImage';
 
 const renderImage = (country, kind) => {
   let alt = '';
@@ -7,11 +7,11 @@ const renderImage = (country, kind) => {
   let iconClassName = '';
   let size = '';
 
-  if (kind === 'world') {
+  if (kind === 'top') {
     alt = 'World Image';
     imageClassName = 'worldImage';
     iconClassName = 'allCountriesMap';
-    size = '70';
+    size = '80';
   } else {
     alt = 'Country Image';
     imageClassName = 'countryImage';
@@ -21,7 +21,12 @@ const renderImage = (country, kind) => {
 
   if (country?.image) {
     return (
-      <MapImage src={country.image} alt={alt} className={imageClassName} />
+      <MapImage
+        src={country.image}
+        alt={alt}
+        imageClassName={imageClassName}
+        iconClassName={iconClassName}
+      />
     );
   }
   return <Icon icon="carbon:location-filled" width={size} height={size} className={iconClassName} />;
