@@ -4,11 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getRegions } from '../Redux/regions/RegionsReducer';
 import TotalCases from '../Components/TotalCases';
 import SearchItem from '../Components/SearchItem';
+import RegionsList from '../Components/RegionComponents/RegionsList';
 
 const RegionContainer = () => {
   const { country } = useParams();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.regions);
+
+  const { regions } = state;
 
   useEffect(() => {
     dispatch(getRegions(country));
@@ -31,6 +34,7 @@ const RegionContainer = () => {
     <div className="regionsContainer">
       {renderHeader()}
       <SearchItem item="Region" searchItem={searchRegion} updateSearchItem={updateSearcRegion} />
+      <RegionsList regions={regions} searchRegion={searchRegion} />
     </div>
   );
 };
