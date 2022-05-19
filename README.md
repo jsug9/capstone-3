@@ -17,7 +17,7 @@
 
 ## Presentation
 
-- To see the presentation in a video [click here]().
+- To see the presentation in a video [click here](https://www.loom.com/share/2ec7c8700eb9424ca19512f292651b16).
 
 ## Getting Started
 
