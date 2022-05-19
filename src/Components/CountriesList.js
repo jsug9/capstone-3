@@ -1,13 +1,22 @@
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import CountryItem from './CountryItem';
 
 const CountriesList = (props) => {
   const { countries, searchCountry } = props;
-  console.log(searchCountry);
+  const [visibleCountries, setVisibleCountries] = useState(countries);
+
+  useEffect(() => {
+    const cleanSearchTerm = searchCountry.toLowerCase().trim();
+    setVisibleCountries(countries.filter((country) => {
+      const countryName = country.name.toLowerCase();
+      return countryName.includes(cleanSearchTerm);
+    }));
+  }, [searchCountry]);
 
   return (
     <div className="countriesList">
-      {countries.map((item) => (
+      {visibleCountries?.map((item) => (
         <CountryItem key={item.id} country={item} />
       ))}
     </div>
