@@ -42,6 +42,14 @@ nav {
   color: white;
 }
 
+.backArrow {
+  color: white;
+}
+
+.backArrowDisabled {
+  color: $mainDarker;
+}
+
 .navbarHover:hover {
   color: $mainDarker;
 }
@@ -60,7 +68,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 9rem;
+  height: 10rem;
   background: $mainDarker;
   color: white;
 }
@@ -77,6 +85,11 @@ nav {
 
 .allCountriesMap {
   color: $main;
+}
+
+.worldImage {
+  opacity: 0.5;
+  height: 75%;
 }
 
 .allCountriesSize {
@@ -97,6 +110,12 @@ h1 {
   font-size: 20px;
 }
 
+.countryInput {
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  border: none;
+}
+
 // Countries List
 .countriesList {
   width: 100%;
@@ -107,10 +126,10 @@ h1 {
 // Country Item
 .countryItem {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  height: 9rem;
+  justify-content: space-between;
+  height: 12rem;
+  padding-top: 1rem;
   background: $main;
   color: white;
   width: 50%;
@@ -121,6 +140,13 @@ h1 {
   align-self: center;
 }
 
+.countryImage {
+  width: 50%;
+  height: 50%;
+  align-self: center;
+  opacity: 0.5;
+}
+
 .countryName {
   margin-bottom: -1rem;
 }
@@ -129,8 +155,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  margin-left: 1rem;
 }
 
 .countryItem:nth-child(4n + 2),
@@ -153,7 +177,17 @@ h1 {
   }
 
   .summary {
+    padding: 1rem 0;
+    flex-direction: column;
+    height: 18rem;
+  }
+
+  .countryInformation {
     padding: $phonePadding;
+  }
+
+  .countryItem {
+    flex-direction: column;
   }
 }
 
@@ -168,5 +202,11 @@ h1 {
 
   .summary {
     padding: $desktopPadding;
+  }
+
+  .countryItem {
+    flex-direction: row;
+    padding: $desktopPadding;
+    align-items: center;
   }
 }

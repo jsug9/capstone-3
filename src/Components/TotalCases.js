@@ -1,18 +1,17 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import renderImage from '../Logic/ImageRenderer';
 
-const CountryItem = (props) => {
+const TotalCases = (props) => {
   const { country } = props;
 
   return (
-    <div className="countryItem">
-      {renderImage(country, 'country')}
-      <div className="countryInformation">
-        <p className="countryName">{country.name}</p>
-        <p>
+    <div className="summary">
+      {renderImage(country, 'world')}
+      <div className="summary-left">
+        <p className="allCountries allCountriesSize">All Countries</p>
+        <p className="allCountriesSize">
           <span>
-            {country.today_confirmed}
+            {country?.today_confirmed}
           </span>
           {' '}
           cases
@@ -22,7 +21,7 @@ const CountryItem = (props) => {
   );
 };
 
-CountryItem.propTypes = {
+TotalCases.propTypes = {
   country: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
@@ -35,4 +34,4 @@ CountryItem.propTypes = {
   }).isRequired,
 };
 
-export default CountryItem;
+export default TotalCases;

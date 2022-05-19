@@ -1,46 +1,39 @@
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import CountryItem from './CountryItem';
 
-const CountriesList = () => {
-  const countries = [
-    {
-      id: '1',
-      name: 'Peru',
-      cases: 1000,
-    },
-    {
-      id: '2',
-      name: 'Italy',
-      cases: 1300,
-    },
-    {
-      id: '3',
-      name: 'Spain',
-      cases: 1200,
-    },
-    {
-      id: '4',
-      name: 'Argentina',
-      cases: 1200,
-    },
-    {
-      id: '5',
-      name: 'France',
-      cases: 1200,
-    },
-    {
-      id: '6',
-      name: 'China',
-      cases: 1200,
-    },
-  ];
+const CountriesList = (props) => {
+  const { countries, searchCountry } = props;
+  const [visibleCountries, setVisibleCountries] = useState(countries);
+
+  useEffect(() => {
+    const cleanSearchTerm = searchCountry.toLowerCase().trim();
+    setVisibleCountries(countries.filter((country) => {
+      const countryName = country.name.toLowerCase();
+      return countryName.includes(cleanSearchTerm);
+    }));
+  }, [searchCountry]);
 
   return (
     <div className="countriesList">
-      {countries.map((country) => (
-        <CountryItem key={country.id} country={country} />
+      {visibleCountries?.map((item) => (
+        <CountryItem key={item.id} country={item} />
       ))}
     </div>
   );
+};
+
+CountriesList.propTypes = {
+  countries: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    today_confirmed: PropTypes.string,
+    today_deaths: PropTypes.string,
+    today_recovered: PropTypes.string,
+    source: PropTypes.string,
+    today_open_cases: PropTypes.number,
+  })).isRequired,
+  searchCountry: PropTypes.string.isRequired,
 };
 
 export default CountriesList;
