@@ -63,7 +63,6 @@ nav {
 }
 
 // COUNTRIES PAGE
-
 // Sumary
 .summary {
   display: flex;
@@ -168,6 +167,30 @@ h1 {
   }
 }
 
+// REGIONS PAGE
+.noRegions {
+  padding: 2rem;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.regionItem {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.regionItem:nth-child(even) {
+  background: $mainDarker;
+}
+.regionInformation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 // MEDIA QUERIES
 @media (max-width: 768px) {
   nav {
@@ -184,12 +207,20 @@ h1 {
     height: 18rem;
   }
 
+  .allCountriesMap {
+    margin-top: 4rem;
+  }
+
   .countryInformation {
     padding: $phonePadding;
   }
 
   .countryItem {
     flex-direction: column;
+  }
+
+  .regionItem {
+    padding: $phonePadding;
   }
 }
 
@@ -210,5 +241,9 @@ h1 {
     flex-direction: row;
     padding: $desktopPadding;
     align-items: center;
+  }
+
+  .regionItem {
+    padding: $desktopPadding;
   }
 }

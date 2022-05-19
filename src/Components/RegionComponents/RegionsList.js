@@ -26,7 +26,7 @@ const RegionsList = (props) => {
         ))
       );
     }
-    return (<p>No Regions Available</p>);
+    return (<p className="noRegions">No Regions Available</p>);
   };
 
   return (

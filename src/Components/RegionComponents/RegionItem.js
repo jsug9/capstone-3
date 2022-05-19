@@ -7,8 +7,8 @@ const RegionItem = (props) => {
 
   return (
     <div className="regionItem">
-      <p className="countryName">{region.name}</p>
-      <div className="countryInformation">
+      <p className="regionName">{region.name}</p>
+      <div className="regionInformation">
         <p>{region.today_confirmed}</p>
         <Icon icon="bi:arrow-down-circle" rotate={3} className="regionArrow" />
       </div>
