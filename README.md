@@ -51,10 +51,6 @@ To get a local copy of the project, follow these steps:
   ```
   npm install react-router-dom@6
   ```
-  - Live Server
-  ```
-  npm install --save-dev webpack-dev-server
-  ```
 
 For the Live Server  || http://localhost:8080/
 ```
