@@ -32,10 +32,6 @@ CountriesList.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
     today_confirmed: PropTypes.string,
-    today_deaths: PropTypes.string,
-    today_recovered: PropTypes.string,
-    source: PropTypes.string,
-    today_open_cases: PropTypes.number,
   })).isRequired,
   searchCountry: PropTypes.string.isRequired,
 };

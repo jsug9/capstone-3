@@ -17,20 +17,12 @@ const getCountries = () => async (dispatch) => {
     name: 'All Countries',
     image: getMapUrl('world'),
     today_confirmed: allCountries.today_confirmed.toLocaleString(),
-    today_deaths: allCountries.today_deaths.toLocaleString(),
-    today_recovered: allCountries.today_recovered.toLocaleString(),
-    source: allCountries.source,
-    today_open_cases: allCountries.today_open_cases,
   };
   const mappedList = Object.keys(countriesList).map((key) => ({
     id: key,
     name: countriesList[key].name,
     image: getMapUrl(countriesList[key].name.toLowerCase()),
     today_confirmed: countriesList[key].today_confirmed.toLocaleString(),
-    today_deaths: countriesList[key].today_deaths.toLocaleString(),
-    today_recovered: countriesList[key].today_recovered.toLocaleString(),
-    source: countriesList[key].source,
-    today_open_cases: countriesList[key].today_open_cases,
   }));
   mappedList.unshift(mappedAllCountries);
   dispatch({

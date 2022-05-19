@@ -27,10 +27,6 @@ TotalCases.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     today_confirmed: PropTypes.string,
-    today_deaths: PropTypes.string,
-    today_recovered: PropTypes.string,
-    source: PropTypes.string,
-    today_open_cases: PropTypes.number,
   }).isRequired,
 };
 
