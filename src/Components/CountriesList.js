@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import CountryItem from './CountryItem';
 
 const CountriesList = (props) => {
-  const { countries } = props;
+  const { countries, searchCountry } = props;
+  console.log(searchCountry);
 
   return (
     <div className="countriesList">
@@ -23,6 +24,7 @@ CountriesList.propTypes = {
     source: PropTypes.string,
     today_open_cases: PropTypes.number,
   })).isRequired,
+  searchCountry: PropTypes.string.isRequired,
 };
 
 export default CountriesList;
