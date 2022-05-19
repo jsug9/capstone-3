@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 const SearchItem = (props) => {
   const { item, searchItem, updateSearchItem } = props;
 
+  const placeholder = `Search ${item}`;
+
   return (
     <div className="searchDiv">
       <h2>
@@ -12,7 +14,7 @@ const SearchItem = (props) => {
       </h2>
       <input
         type="text"
-        placeholder="Search Country"
+        placeholder={placeholder}
         className="countryInput"
         value={searchItem}
         onChange={updateSearchItem}
