@@ -15,6 +15,10 @@
 
 - [GitHub Deploy](https://jsug9.github.io/capstone-3/).
 
+## Presentation
+
+- To see the presentation in a video [click here]().
+
 ## Getting Started
 
 To get a local copy of the project, follow these steps: 
