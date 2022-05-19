@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import renderImage from '../Logic/ImageRenderer';
 
 const CountryItem = (props) => {
   const { country } = props;
 
   return (
-    <div className="countryItem">
+    <NavLink
+      to={`/countries/${country.id}`}
+      className="countryItem"
+    >
       {renderImage(country, 'country')}
       <div className="countryInformation">
         <p className="countryName">{country.name}</p>
@@ -18,7 +22,7 @@ const CountryItem = (props) => {
           cases
         </p>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

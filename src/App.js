@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import CountriesCountainer from './Pages/CountriesContainer';
+import Region from './Pages/RegionContainer';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
@@ -13,6 +14,7 @@ const App = () => (
     </header>
     <Routes>
       <Route path="/" element={<CountriesCountainer />} />
+      <Route path="/countries/:countryName" element={<Region />} />
     </Routes>
   </Router>
 );
