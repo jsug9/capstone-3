@@ -42,5 +42,5 @@ const countriesReducer = (state = initialState, action) => {
   }
 };
 
-export { getCountries };
+export { getCountries, GET_COUNTRIES };
 export default countriesReducer;
