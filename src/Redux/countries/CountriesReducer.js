@@ -7,6 +7,8 @@ const GET_COUNTRIES = 'Capstone-3/countries/GET_COUNTRIES';
 const initialState = [];
 let isLoading = false;
 
+const dispatchCountries = (countries) => ({ type: GET_COUNTRIES, payload: countries });
+
 const getCountries = () => async (dispatch) => {
   if (isLoading) return;
   const data = await fetchCountries();
@@ -25,10 +27,7 @@ const getCountries = () => async (dispatch) => {
     today_confirmed: countriesList[key].today_confirmed.toLocaleString(),
   }));
   mappedList.unshift(mappedAllCountries);
-  dispatch({
-    type: GET_COUNTRIES,
-    payload: mappedList,
-  });
+  dispatch(dispatchCountries(mappedList));
   isLoading = true;
 };
 
@@ -42,5 +41,5 @@ const countriesReducer = (state = initialState, action) => {
   }
 };
 
-export { getCountries, GET_COUNTRIES };
+export { getCountries, GET_COUNTRIES, dispatchCountries };
 export default countriesReducer;
