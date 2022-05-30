@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Capstone 3
+# Covid Tracker
 
-> In this capstone I put on practice my skills on React and Redux, along with JavaScript and SCSS.
+> This Web App keeps track of the covid cases around the world using the [Narrativa API](https://covid19tracking.narrativa.com/index_en.html). Built with React & Redux.
 
 ## Built With
 
